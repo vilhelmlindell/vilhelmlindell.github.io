@@ -45,14 +45,15 @@ async function getFreeRooms() {
     let response = await fetch('lesson_times.json');
     let lessonTimes = await response.json();
 
-    let current_time = getCurrentTime();
-    //let current_time = "14:15:00";
+    //let current_time = getCurrentTime();
+    let current_time = "14:15:00";
     let free_rooms = [];
     let occupied_rooms = [];
 
     for (let room_lesson_times of lessonTimes) {
         let room = room_lesson_times[0];
-        let day = Math.min(new Date().getDay(), 4);
+        //let day = Math.min(new Date().getDay(), 4);
+        let day = Math.min(new Date().getDay() - 1, 4);
 
         for (let i = 0; i < room_lesson_times[1][day].length; i++) {
             let lesson_time = room_lesson_times[1][day][i];
