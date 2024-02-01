@@ -45,8 +45,8 @@ async function getFreeRooms() {
     let response = await fetch('lesson_times.json');
     let lessonTimes = await response.json();
 
-    //let current_time = getCurrentTime();
-    let current_time = "14:15:00";
+    let current_time = getCurrentTime();
+    //let current_time = "14:15:00";
     let free_rooms = [];
     let occupied_rooms = [];
 
